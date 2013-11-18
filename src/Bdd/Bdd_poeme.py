@@ -27,7 +27,7 @@ class Bdd_poeme():
         return poemes
     
     def load_one_poeme(self, poeme):
-        req = ""
+        req = "SELECT * FROM POEME WHERE idPoeme = ".poeme.id_theme
         return poeme
     
     def load_poeme_by_auteur(self, auteur):
