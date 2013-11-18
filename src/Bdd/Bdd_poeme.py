@@ -12,7 +12,7 @@ class Bdd_poeme():
     '''
 
     def del_poeme(self,poeme):
-        req = ""
+        req = "DELETE FROM POEME WHERE idPoeme = ".poeme.id_poeme
         
         
     def save_poeme(self,poeme):
