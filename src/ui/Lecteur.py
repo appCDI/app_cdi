@@ -33,7 +33,7 @@ class Lecteur(QtGui.QMainWindow):
         
     def about(self):
         QtGui.QMessageBox.information(self, "A propos de l'application",
-                "Cette Application a été conçu pour le Lycée Paul Louis Courrier"
+                "Cette Application a été conçu pour le Lycée Paul Louis Courrier "
                 "par les étudiants en BTS SIO à l'occasion du printemps des "
                 "poetes.")
 
