@@ -4,7 +4,11 @@ Created on 18 nov. 2013
 @author: niho
 '''
 
-from PyQt4 import QtSql, QtCore
+import sqlite3
+
+basededonnee = "lecteuraudio.db"
+conn = sqlite3.connect(basededonnee)
+cur = conn.cursor()
 
 class Bdd_poeme():
     '''
@@ -12,7 +16,9 @@ class Bdd_poeme():
     '''
 
     def del_poeme(self,poeme):
-        req = "DELETE FROM POEME WHERE idPoeme = ".poeme.id_poeme
+        id_poeme = poeme.id
+        req = "DELETE FROM POEME WHERE idPoeme = ".id_poeme
+        cur.execute(req)
         
         
     def save_poeme(self,poeme):
@@ -20,23 +26,35 @@ class Bdd_poeme():
         
     def load_all_poeme(self):
         req = "SELECT * FROM POEME"
-        return poemes
+        cur.execute(req)
+        return list(cur)
     
     def load_poeme_by_theme(self, theme):
-        req = "SELECT DISTINCT * FROM POEME WHERE idTheme = ",theme.id_theme
-        return poemes
+        id_theme = theme.id_theme
+        req = "SELECT DISTINCT * FROM POEME WHERE idTheme = ",id_theme
+        cur.execute(req)
+        
+        return list(cur)
     
     def load_one_poeme(self, poeme):
-        req = "SELECT * FROM POEME WHERE idPoeme = ".poeme.id_theme
-        return poeme
+        id_poeme = poeme.id_poeme
+        req = "SELECT * FROM POEME WHERE idPoeme = ".id_theme
+        resultat = cur.execute(req)
+        return resultat
     
     def load_poeme_by_auteur(self, auteur):
-        req = ""
-        return poemes
+        id_artiste = auteur.id_auteur
+        req = "SELECT * FROM poeme WHERE idArtiste = ".id_artiste
+        cur.execute(req)
+        
+        return list(cur)
     
     def load_poeme_by_eleve(self, eleve):
-        req = ""
-        return poemes
+        id_Eleve = eleve.id
+        req = "SELECT * FROM poeme WHERE idEleve = ".id_Eleve
+        cur.execute(req)        
+        
+        return list(cur)
         
         
     
