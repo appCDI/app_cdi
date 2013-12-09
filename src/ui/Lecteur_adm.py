@@ -18,7 +18,7 @@ class Lecteur_adm(Lecteur.Lecteur):
         self.setupMenusAdm()
         
     def gestion(self):
-        QtGui.QMessageBox.Information(self, "Yeah", "interface admin gestion poeme")
+        QtGui.QMessageBox.information(self, "Yeah", "interface admin gestion poeme")
         
     def setupActionsAdm(self):
         self.gestionAction = QtGui.QAction("&Gestion",self, triggered=self.gestion)
@@ -30,7 +30,7 @@ class Lecteur_adm(Lecteur.Lecteur):
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
-    app.setApplicationName("Lecteur de poeme")
+    app.setApplicationName("Lecteur de poeme - Interface administrateur")
     app.setQuitOnLastWindowClosed(True)
     
     window = Lecteur_adm()
