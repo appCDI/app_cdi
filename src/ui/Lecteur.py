@@ -30,6 +30,7 @@ class Lecteur(QtGui.QMainWindow):
         self.setupUi()
         
         self.sources = []
+        #self.windowTitle("Printemps des poetes - Lecteur")
         
     def about(self):
         QtGui.QMessageBox.information(self, "A propos de l'application",

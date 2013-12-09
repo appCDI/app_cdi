@@ -16,6 +16,7 @@ class Lecteur_adm(Lecteur.Lecteur):
         super().__init__()
         self.setupActionsAdm()
         self.setupMenusAdm()
+        #self.windowTitle("Printemps des poetes - Interface Administration")
         
     def gestion(self):
         QtGui.QMessageBox.information(self, "Yeah", "interface admin gestion poeme")
